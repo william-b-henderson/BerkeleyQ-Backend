@@ -82,10 +82,21 @@ def get_average_wait_time():
     query_params = request.args.to_dict()
     class_id = query_params.get("class_id")
     oh_id = query_params.get("oh_id")
+    start_time = query_params.get("start_time")
+    end_time = query_params.get("end_time")
+    if start_time is not None and end_time is not None:
+        get_average_wait_time = """
+        SELECT AVG(wait_time) FROM oh
+        WHERE class_id=%s AND oh_id=%s AND timestamp>=%s AND timestamp<=%s
+        """
+        cursor.execute(get_average_wait_time, (class_id, oh_id, start_time, end_time))
+        avg_wait_time = cursor.fetchall()
+        return str(avg_wait_time), HTTPStatus.OK
+
     get_average_wait_time ="""
     SELECT AVG(wait_time) FROM oh
     WHERE class_id=%s AND oh_id=%s
     """
-    cursor.execute(get_average_wait_time, (class_id, oh_id))
+    cursor.execute(get_average_wait_time, (class_id, oh_id,))
     avg_wait_time = cursor.fetchall()
     return str(avg_wait_time), HTTPStatus.OK
