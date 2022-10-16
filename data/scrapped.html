@@ -1,0 +1,254 @@
+<html lang="en">
+    <head>
+        <meta name="description" content="CS 162 Queue" />
+        <meta name="keywords" content="CS 162, Computer Science, CS, Office Hours, Project, Homework, Party, Parties, Queue" />
+        <meta name="author" content="CS 162 Course Staff" />
+        <meta name="viewport" content="width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" href="/static/img/favicon/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="/static/img/favicon/android-chrome-192x192.png" sizes="192x192" />
+        <link rel="icon" type="image/png" href="/static/img/favicon/favicon-16x16.png" sizes="16x16" />
+        <link rel="manifest" href="/static/img/favicon/manifest.json" />
+        <link rel="mask-icon" href="/static/img/favicon/safari-pinned-tab.svg" color="#0072c1" />
+        <link rel="shortcut icon" href="/static/img/favicon/favicon.ico" />
+        <meta name="apple-mobile-web-app-title" content="Office Hours" />
+        <meta name="application-name" content="Office Hours" />
+        <meta name="msapplication-TileColor" content="#0072c1" />
+        <meta name="msapplication-TileImage" content="/static//img/favicon/mstile-144x144.png" />
+        <meta name="msapplication-config" content="/static/img/favicon/browserconfig.xml" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/css/bootstrap-select.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" />
+
+        <link rel="stylesheet" type="text/css" href="/static/public/style.css?d221b52b" />
+
+        <link rel="icon" href="/static/img/favicon.ico" />
+
+        <title>CS 162 Queue</title>
+
+        <script>
+            window.courseName = "CS 162";
+        </script>
+    </head>
+    <body>
+        <div id="content">
+            <div>
+                <div>
+                    <nav class="navbar navbar-default navbar-fixed-top">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-section">
+                                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="/"><strong>CS 162 |</strong> Queue</a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbar-collapse-section">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="/login/">Staff Login</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="offline offline-up"><div class="offline-content">Your computer is connected.</div></div>
+                    <div>
+                        <div class="jumbotron blue">
+                            <div class="container">
+                                <section class="page-header">
+                                    <div class="row"><div class="row messages"></div></div>
+                                    <div class="row">
+                                        <div class="col-md-7 col-lg-8">
+                                            <h3 class="truncate">Hi! Please sign in</h3>
+                                            <p class="truncate">Sign in with your course OK account to request help</p>
+                                        </div>
+                                        <div class="col-md-5 col-lg-4">
+                                            <div class="request-form"><a class="btn btn-block btn-jumbo btn-outline" href="/login">Sign in with Ok</a></div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="col-xs-12">
+                                <div class="alert alert-info alert-dismissable fade in" role="alert">
+                                    <button type="button" class="close" aria-label="Close" data-dismiss="alert"><span aria-hidden="true">×</span></button>
+                                    <p>Please fill out a ticket according to the template. Otherwise, we will be <strong>unable to help you with your ticket</strong>.</p>
+                                    <p>If you're looking for the <strong>OH times</strong>, please go to <a href="https://cs162.org/#dis-oh-calendar">https://cs162.org/#dis-oh-calendar</a></p>
+                                    <p>Zoom link: <a href="https://berkeley.zoom.us/j/95765447777?pwd=SzJIV3k2SkZFRktsaE40WUIzN0RuZz09">https://berkeley.zoom.us/j/95765447777?pwd=SzJIV3k2SkZFRktsaE40WUIzN0RuZz09</a></p>
+                                </div>
+                                <div class="alert alert-success alert-dismissable fade in" role="alert">
+                                    <button type="button" class="close" aria-label="Close" data-dismiss="alert"><span aria-hidden="true">×</span></button>
+                                    <h4>
+                                        Estimated wait time: <font color="#ff0000"><strong>&gt; 120</strong></font> minutes
+                                    </h4>
+                                    <h5>12 students and 1 assistant currently online.</h5>
+                                </div>
+                            </div>
+                            <div class="row tabs-container">
+                                <div class="col-xs-12 tabs">
+                                    <ul class="nav nav-tabs nav-justified">
+                                        <li class="active"><a href="#">Waiting (11)</a></li>
+                                        <li class=""><a href="#">Assigned (1)</a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div>
+                                            <div class="queue">
+                                                <div class="ticket-row clearfix">
+                                                    <div class="pull-left ticket-index">#1</div>
+                                                    <h4 class="pull-left">
+                                                        Homework 3 directory link<br class="visible-xs" />
+                                                        <small class="visible-xs ticket-status-xs">10:01 AM in In Person</small><small class="visible-xs ticket-desc-xs"></small>
+                                                        <small class="visible-xs ticket-created-xs">Ticket created: 5 hours ago</small>
+                                                    </h4>
+                                                    <h4 class="pull-left hidden-xs ticket-desc-md"><small></small></h4>
+                                                    <h4 class="pull-left hidden-xs ticket-created-md"><small>Ticket created: 5 hours ago</small></h4>
+                                                    <h4 class="pull-right hidden-xs ticket-status-md"><small>10:01 AM in In Person </small></h4>
+                                                </div>
+                                                <div class="ticket-row clearfix">
+                                                    <div class="pull-left ticket-index">#2</div>
+                                                    <h4 class="pull-left">
+                                                        Homework 3 GET<br class="visible-xs" />
+                                                        <small class="visible-xs ticket-status-xs">10:10 AM in Online</small><small class="visible-xs ticket-desc-xs"></small>
+                                                        <small class="visible-xs ticket-created-xs">Ticket created: 4 hours ago</small>
+                                                    </h4>
+                                                    <h4 class="pull-left hidden-xs ticket-desc-md"><small></small></h4>
+                                                    <h4 class="pull-left hidden-xs ticket-created-md"><small>Ticket created: 4 hours ago</small></h4>
+                                                    <h4 class="pull-right hidden-xs ticket-status-md"><small>10:10 AM in Online </small></h4>
+                                                </div>
+                                                <div class="ticket-row clearfix">
+                                                    <div class="pull-left ticket-index">#3</div>
+                                                    <h4 class="pull-left">
+                                                        Homework 3 GET request<br class="visible-xs" />
+                                                        <small class="visible-xs ticket-status-xs">11:00 AM in Online</small><small class="visible-xs ticket-desc-xs"></small>
+                                                        <small class="visible-xs ticket-created-xs">Ticket created: 4 hours ago</small>
+                                                    </h4>
+                                                    <h4 class="pull-left hidden-xs ticket-desc-md"><small></small></h4>
+                                                    <h4 class="pull-left hidden-xs ticket-created-md"><small>Ticket created: 4 hours ago</small></h4>
+                                                    <h4 class="pull-right hidden-xs ticket-status-md"><small>11:00 AM in Online </small></h4>
+                                                </div>
+                                                <div class="ticket-row clearfix">
+                                                    <div class="pull-left ticket-index">#4</div>
+                                                    <h4 class="pull-left">
+                                                        Project 2 Conceptual<br class="visible-xs" />
+                                                        <small class="visible-xs ticket-status-xs">12:25 PM in In Person</small><small class="visible-xs ticket-desc-xs"></small>
+                                                        <small class="visible-xs ticket-created-xs">Ticket created: 2 hours ago</small>
+                                                    </h4>
+                                                    <h4 class="pull-left hidden-xs ticket-desc-md"><small></small></h4>
+                                                    <h4 class="pull-left hidden-xs ticket-created-md"><small>Ticket created: 2 hours ago</small></h4>
+                                                    <h4 class="pull-right hidden-xs ticket-status-md"><small>12:25 PM in In Person </small></h4>
+                                                </div>
+                                                <div class="ticket-row clearfix">
+                                                    <div class="pull-left ticket-index">#5</div>
+                                                    <h4 class="pull-left">
+                                                        Homework 3 Performance<br class="visible-xs" />
+                                                        <small class="visible-xs ticket-status-xs">2:05 PM in In Person</small><small class="visible-xs ticket-desc-xs"></small>
+                                                        <small class="visible-xs ticket-created-xs">Ticket created: 34 minutes ago</small>
+                                                    </h4>
+                                                    <h4 class="pull-left hidden-xs ticket-desc-md"><small></small></h4>
+                                                    <h4 class="pull-left hidden-xs ticket-created-md"><small>Ticket created: 34 minutes ago</small></h4>
+                                                    <h4 class="pull-right hidden-xs ticket-status-md"><small>2:05 PM in In Person </small></h4>
+                                                </div>
+                                                <div class="ticket-row clearfix">
+                                                    <div class="pull-left ticket-index">#6</div>
+                                                    <h4 class="pull-left">
+                                                        Homework 3 Q4<br class="visible-xs" />
+                                                        <small class="visible-xs ticket-status-xs">2:09 PM in Online</small><small class="visible-xs ticket-desc-xs"></small>
+                                                        <small class="visible-xs ticket-created-xs">Ticket created: 30 minutes ago</small>
+                                                    </h4>
+                                                    <h4 class="pull-left hidden-xs ticket-desc-md"><small></small></h4>
+                                                    <h4 class="pull-left hidden-xs ticket-created-md"><small>Ticket created: 30 minutes ago</small></h4>
+                                                    <h4 class="pull-right hidden-xs ticket-status-md"><small>2:09 PM in Online </small></h4>
+                                                </div>
+                                                <div class="ticket-row clearfix">
+                                                    <div class="pull-left ticket-index">#7</div>
+                                                    <h4 class="pull-left">
+                                                        Homework 3 thread pool<br class="visible-xs" />
+                                                        <small class="visible-xs ticket-status-xs">2:13 PM in In Person</small><small class="visible-xs ticket-desc-xs"></small>
+                                                        <small class="visible-xs ticket-created-xs">Ticket created: 26 minutes ago</small>
+                                                    </h4>
+                                                    <h4 class="pull-left hidden-xs ticket-desc-md"><small></small></h4>
+                                                    <h4 class="pull-left hidden-xs ticket-created-md"><small>Ticket created: 26 minutes ago</small></h4>
+                                                    <h4 class="pull-right hidden-xs ticket-status-md"><small>2:13 PM in In Person </small></h4>
+                                                </div>
+                                                <div class="ticket-row clearfix">
+                                                    <div class="pull-left ticket-index">#8</div>
+                                                    <h4 class="pull-left">
+                                                        Homework 3 GET<br class="visible-xs" />
+                                                        <small class="visible-xs ticket-status-xs">2:20 PM in In Person</small><small class="visible-xs ticket-desc-xs"></small>
+                                                        <small class="visible-xs ticket-created-xs">Ticket created: 20 minutes ago</small>
+                                                    </h4>
+                                                    <h4 class="pull-left hidden-xs ticket-desc-md"><small></small></h4>
+                                                    <h4 class="pull-left hidden-xs ticket-created-md"><small>Ticket created: 20 minutes ago</small></h4>
+                                                    <h4 class="pull-right hidden-xs ticket-status-md"><small>2:20 PM in In Person </small></h4>
+                                                </div>
+                                                <div class="ticket-row clearfix">
+                                                    <div class="pull-left ticket-index">#9</div>
+                                                    <h4 class="pull-left">
+                                                        Homework 3 proxy<br class="visible-xs" />
+                                                        <small class="visible-xs ticket-status-xs">2:24 PM in In Person</small><small class="visible-xs ticket-desc-xs"></small>
+                                                        <small class="visible-xs ticket-created-xs">Ticket created: 15 minutes ago</small>
+                                                    </h4>
+                                                    <h4 class="pull-left hidden-xs ticket-desc-md"><small></small></h4>
+                                                    <h4 class="pull-left hidden-xs ticket-created-md"><small>Ticket created: 15 minutes ago</small></h4>
+                                                    <h4 class="pull-right hidden-xs ticket-status-md"><small>2:24 PM in In Person </small></h4>
+                                                </div>
+                                                <div class="ticket-row clearfix">
+                                                    <div class="pull-left ticket-index">#10</div>
+                                                    <h4 class="pull-left">
+                                                        Project 1 floating point<br class="visible-xs" />
+                                                        <small class="visible-xs ticket-status-xs">2:36 PM in In Person</small><small class="visible-xs ticket-desc-xs"></small>
+                                                        <small class="visible-xs ticket-created-xs">Ticket created: 3 minutes ago</small>
+                                                    </h4>
+                                                    <h4 class="pull-left hidden-xs ticket-desc-md"><small></small></h4>
+                                                    <h4 class="pull-left hidden-xs ticket-created-md"><small>Ticket created: 3 minutes ago</small></h4>
+                                                    <h4 class="pull-right hidden-xs ticket-status-md"><small>2:36 PM in In Person </small></h4>
+                                                </div>
+                                                <div class="ticket-row clearfix">
+                                                    <div class="pull-left ticket-index">#11</div>
+                                                    <h4 class="pull-left">
+                                                        Homework 3 GET<br class="visible-xs" />
+                                                        <small class="visible-xs ticket-status-xs">2:39 PM in In Person</small><small class="visible-xs ticket-desc-xs"></small>
+                                                        <small class="visible-xs ticket-created-xs">Ticket created: a few seconds ago</small>
+                                                    </h4>
+                                                    <h4 class="pull-left hidden-xs ticket-desc-md"><small></small></h4>
+                                                    <h4 class="pull-left hidden-xs ticket-created-md"><small>Ticket created: a few seconds ago</small></h4>
+                                                    <h4 class="pull-right hidden-xs ticket-status-md"><small>2:39 PM in In Person </small></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/js/bootstrap-select.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.production.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.production.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/5.1.2/react-router-dom.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react-transition-group/2.8.0/react-transition-group.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.28/moment-timezone-with-data-10-year-range.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.12/push.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/classnames/2.2.5/index.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react-markdown/4.2.2/react-markdown.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/9.17.2/sweetalert2.min.css" id="theme-styles" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/9.17.2/sweetalert2.min.js"></script>
+
+        <!-- App-specific JS -->
+
+        <script type="text/javascript" src="/static/public/common.js?cachebuster"></script>
+    </body>
+</html>
