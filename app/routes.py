@@ -148,3 +148,27 @@ def get_average_num_people_online():
     cursor.execute(get_average_num_people_online, (class_id, oh_id,))
     avg_num_people_online = cursor.fetchall()
     return str(avg_num_people_online), HTTPStatus.OK
+
+@app.route('/oh/stats/max_num_tas_online', methods=['GET'])
+def get_max_num_tas_online():
+    query_params = request.args.to_dict()
+    class_id = query_params.get("class_id")
+    oh_id = query_params.get("oh_id")
+    start_time = query_params.get("start_time")
+    end_time = query_params.get("end_time")
+    if start_time is not None and end_time is not None:
+        get_max_num_tas_online = """
+        SELECT MAX(num_tas_online) FROM oh
+        WHERE class_id=%s AND oh_id=%s AND timestamp>=%s AND timestamp<=%s
+        """
+        cursor.execute(get_max_num_tas_online, (class_id, oh_id, start_time, end_time))
+        max_num_tas_online = cursor.fetchall()
+        return str(max_num_tas_online), HTTPStatus.OK
+
+    get_max_num_tas_online ="""
+    SELECT MAX(num_tas_online) FROM oh
+    WHERE class_id=%s AND oh_id=%s
+    """
+    cursor.execute(get_max_num_tas_online, (class_id, oh_id,))
+    max_num_tas_online = cursor.fetchall()
+    return str(max_num_tas_online), HTTPStatus.OK
