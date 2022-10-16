@@ -25,7 +25,7 @@ def datetime_handler(x):
 @app.route('/')
 @app.route('/index')
 def index():
-    return "Hello, World!"
+    return "Welcome to our project!"
 
 @app.route('/classes')
 def get_classes():
