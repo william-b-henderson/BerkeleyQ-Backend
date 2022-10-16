@@ -47,6 +47,24 @@ def post_class():
 def get_class_schedule(class_id):
     return "Class schedule for class_id {}".format(class_id)
 
+@app.route('/oh', methods=['POST'])
+def post_oh():
+    query_params = request.json
+    class_id = query_params.get("class_id")
+    oh_id = query_params.get("oh_id")
+    timestamp = query_params.get("timestamp")
+    wait_time = query_params.get("wait_time")
+    num_open_tickets = query_params.get("num_open_tickets")
+    num_tas_online = query_params.get("num_tas_online")
+    num_people_online = query_params.get("num_people_online")
+    insert_oh = """
+    INSERT INTO oh
+    VALUES (%s, %s, %s, %s, %s, %s, %s);
+    """
+    cursor.execute(insert_oh, (class_id, oh_id, timestamp, wait_time, num_open_tickets, num_tas_online, num_people_online))
+    conn.commit()
+    return "OH placed in table", HTTPStatus.OK
+
 @app.route('/oh/<class_id>/<oh_id>')
 def get_class_oh(class_id, oh_id):
     return "OH {} for class {}".format(oh_id, class_id)
