@@ -30,7 +30,7 @@ def index():
 @app.route('/classes')
 def get_classes():
     get_classes = """
-        SELECT DISTINCT(class_name) FROM classes;
+        SELECT * FROM classes;
         """
     cursor.execute(get_classes)
     class_names = cursor.fetchall()
@@ -77,6 +77,12 @@ def post_oh():
     conn.commit()
     return "OH placed in table", HTTPStatus.OK
 
-@app.route('/oh/<class_id>/<oh_id>')
-def get_class_oh(class_id, oh_id):
-    return "OH {} for class {}".format(oh_id, class_id)
+@app.route('/oh/<class_id>/<oh_id>', methods=['GET'])
+def get_average_wait_time(class_id, oh_id):
+    get_average_wait_time ="""
+    SELECT AVG(wait_time) FROM oh
+    WHERE class_id=%s AND oh_id=%s
+    """
+    cursor.execute(get_average_wait_time, (class_id, oh_id))
+    avg_wait_time = cursor.fetchall()
+    return str(avg_wait_time), HTTPStatus.OK
