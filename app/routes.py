@@ -77,7 +77,7 @@ def post_oh():
     conn.commit()
     return "OH placed in table", HTTPStatus.OK
 
-@app.route('/oh/wait_time', methods=['GET'])
+@app.route('/oh/stats/avg_wait_time', methods=['GET'])
 def get_average_wait_time():
     query_params = request.args.to_dict()
     class_id = query_params.get("class_id")
@@ -100,3 +100,51 @@ def get_average_wait_time():
     cursor.execute(get_average_wait_time, (class_id, oh_id,))
     avg_wait_time = cursor.fetchall()
     return str(avg_wait_time), HTTPStatus.OK
+
+@app.route('/oh/stats/avg_num_open_tickets', methods=['GET'])
+def get_average_num_open_tickets():
+    query_params = request.args.to_dict()
+    class_id = query_params.get("class_id")
+    oh_id = query_params.get("oh_id")
+    start_time = query_params.get("start_time")
+    end_time = query_params.get("end_time")
+    if start_time is not None and end_time is not None:
+        get_average_num_open_tickets = """
+        SELECT AVG(num_open_tickets) FROM oh
+        WHERE class_id=%s AND oh_id=%s AND timestamp>=%s AND timestamp<=%s
+        """
+        cursor.execute(get_average_num_open_tickets, (class_id, oh_id, start_time, end_time))
+        avg_num_open_tickets = cursor.fetchall()
+        return str(avg_num_open_tickets), HTTPStatus.OK
+
+    get_average_num_open_tickets ="""
+    SELECT AVG(num_open_tickets) FROM oh
+    WHERE class_id=%s AND oh_id=%s
+    """
+    cursor.execute(get_average_num_open_tickets, (class_id, oh_id,))
+    avg_num_open_tickets = cursor.fetchall()
+    return str(avg_num_open_tickets), HTTPStatus.OK
+
+@app.route('/oh/stats/avg_num_people_online', methods=['GET'])
+def get_average_num_people_online():
+    query_params = request.args.to_dict()
+    class_id = query_params.get("class_id")
+    oh_id = query_params.get("oh_id")
+    start_time = query_params.get("start_time")
+    end_time = query_params.get("end_time")
+    if start_time is not None and end_time is not None:
+        get_average_num_people_online = """
+        SELECT AVG(num_people_online) FROM oh
+        WHERE class_id=%s AND oh_id=%s AND timestamp>=%s AND timestamp<=%s
+        """
+        cursor.execute(get_average_num_people_online, (class_id, oh_id, start_time, end_time))
+        avg_num_people_online = cursor.fetchall()
+        return str(avg_num_people_online), HTTPStatus.OK
+
+    get_average_num_people_online ="""
+    SELECT AVG(num_people_online) FROM oh
+    WHERE class_id=%s AND oh_id=%s
+    """
+    cursor.execute(get_average_num_people_online, (class_id, oh_id,))
+    avg_num_people_online = cursor.fetchall()
+    return str(avg_num_people_online), HTTPStatus.OK
