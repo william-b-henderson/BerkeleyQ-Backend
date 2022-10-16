@@ -3,6 +3,8 @@ import os
 import pymysql
 from flask import request
 from http import HTTPStatus
+import datetime
+import json
 
 conn = pymysql.connect(
         host= os.getenv('MYSQL_DATABASE_HOST'), 
@@ -12,6 +14,11 @@ conn = pymysql.connect(
         db = os.getenv('MYSQL_DATABASE_NAME'),
         )
 cursor = conn.cursor()
+
+def datetime_handler(x):
+    if isinstance(x, datetime.timedelta):
+        return str(x)
+    return x
 
 
 
@@ -45,7 +52,12 @@ def post_class():
 
 @app.route('/schedule/<class_id>')
 def get_class_schedule(class_id):
-    return "Class schedule for class_id {}".format(class_id)
+    get_schedule = """
+        SELECT * FROM schedule WHERE class_id=%s;
+    """
+    cursor.execute(get_schedule, (class_id))
+    schedule = cursor.fetchall()
+    return json.dumps(schedule, default=datetime_handler), HTTPStatus.OK
 
 @app.route('/oh', methods=['POST'])
 def post_oh():
