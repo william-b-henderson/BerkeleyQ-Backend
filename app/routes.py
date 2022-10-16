@@ -77,8 +77,11 @@ def post_oh():
     conn.commit()
     return "OH placed in table", HTTPStatus.OK
 
-@app.route('/oh/<class_id>/<oh_id>', methods=['GET'])
-def get_average_wait_time(class_id, oh_id):
+@app.route('/oh/wait_time', methods=['GET'])
+def get_average_wait_time():
+    query_params = request.args.to_dict()
+    class_id = query_params.get("class_id")
+    oh_id = query_params.get("oh_id")
     get_average_wait_time ="""
     SELECT AVG(wait_time) FROM oh
     WHERE class_id=%s AND oh_id=%s
