@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath app __init__
+web: gunicorn queue:app
