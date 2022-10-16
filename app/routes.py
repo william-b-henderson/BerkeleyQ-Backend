@@ -1,10 +1,15 @@
-from app import app
 import os
 import pymysql
 from flask import request
 from http import HTTPStatus
 import datetime
 import json
+
+from flask import Flask
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
 
 conn = pymysql.connect(
         host= os.getenv('MYSQL_DATABASE_HOST'), 
