@@ -30,7 +30,7 @@ def index():
 @app.route('/classes')
 def get_classes():
     get_classes = """
-        SELECT DISTINCT(class_name) FROM classes;
+        SELECT * FROM classes;
         """
     cursor.execute(get_classes)
     class_names = cursor.fetchall()
