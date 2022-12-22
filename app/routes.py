@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 import pymysql
 from flask import request
 from http import HTTPStatus
@@ -7,6 +8,8 @@ import json
 
 from flask import Flask
 from flask_cors import CORS
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
