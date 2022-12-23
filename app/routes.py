@@ -15,12 +15,21 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
+# conn = pymysql.connect(
+#         host= os.getenv('MYSQL_DATABASE_HOST'), 
+#         port = int(os.getenv('MYSQL_DATABASE_PORT')),
+#         user = os.getenv('MYSQL_DATABASE_USER'), 
+#         password = os.getenv('MYSQL_DATABASE_PASSWORD'),
+#         db = os.getenv('MYSQL_DATABASE_NAME'),
+#         )
+# cursor = conn.cursor()
+
 conn = pymysql.connect(
-        host= os.getenv('MYSQL_DATABASE_HOST'), 
-        port = int(os.getenv('MYSQL_DATABASE_PORT')),
-        user = os.getenv('MYSQL_DATABASE_USER'), 
-        password = os.getenv('MYSQL_DATABASE_PASSWORD'),
-        db = os.getenv('MYSQL_DATABASE_NAME'),
+        host= 'berkeleyq-mysql.cj1vstpo0icf.us-west-2.rds.amazonaws.com', 
+        port = int(3306),
+        user = 'berkeleyq_admin', 
+        password = 'uIrOPIjHYVhkbQZ55iFD',
+        db = 'berkeleyq_mysql',
         )
 cursor = conn.cursor()
 
